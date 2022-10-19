@@ -1,3 +1,4 @@
 # Sion99.github.io
----
-## My name ...
+
+## My name is Sion.
+Welcome to my Github.io
