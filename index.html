@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+
+<head>
+	<title>지도 페이지</title>
+	<style>
+		body {
+			margin: 15px;
+		}
+
+		div {
+			margin: 0px;
+		}
+
+		#map {
+			background-color: white;
+		}
+
+		#marker-info {
+			margin: 10px;
+		}
+	</style>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Noto+Sans+KR:wght@300;400;700&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<h1 style="font-family:black han sans;">
+		어디가지?
+	</h1>
+	<hr>
+	<div id="map" style="height: 550px; max-width: 2000px;"></div>
+	<hr>
+	<div id="marker-info" style="font-family:Noto sans korean;"></div>
+	<script defer src="{{url_for('static', filename='index.js')}}"></script>
+	<script defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLruWTRDGUOPJV9MO4CAgKQ2w3lLiu0fg&callback=initMap">
+		</script>
+</body>
+
+</html>
