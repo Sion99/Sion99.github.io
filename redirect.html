@@ -12,8 +12,28 @@
     <script>
         const urlParams = new URL(location.href).searchParams;
         const code = urlParams.get("code");
+        if (code !== null) {
+            // do server request
+            fetch("http://sions.me:8000/auth", {
+                method: "POST",
+                body: JSON.stringify({ code: authCode }),
+                headers: new Headers({
+                    "Content-Type": "application/json",
+                }),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    window.localStorage.setItem(
+                        "login_token",
+                        data.login_token
+                    );
+                    console.log("do login with login_token");
+                });
+        }
+        document.cookie = `access_token=${token}; path=/`
         window.localStorage.setItem("authCode", code);
-        window.location.href = "https://sion99.github.io/index.html";
+        window.location.href = "http://localhost:3000/index.html";
     </script>
 </body>
 

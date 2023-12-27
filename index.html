@@ -5,49 +5,55 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Document</title>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<title>Login Page</title>
 </head>
 
 <body>
 	<h1>Using Google OAuth 2.0</h1>
+	<script>
+		src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" >
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+	<button onclick="oauthSignIn()" type="button" class="btn btn-google">Google로 로그인</button>
 	<!-- <button onclick="oauthSignIn()">코드 요청</button> -->
 	<script>
-		/*
-		 * Create form to request access token from Google's OAuth 2.0 server.
-		 */
-		function oauthSignIn() {
-			console.log("OAuthSignIn 시작")
-			var oauth2Endpoint = "https://accounts.google.com/o/oauth2/v2/auth";
+			/*
+			 * Create form to request access token from Google's OAuth 2.0 server.
+			 */
+			function oauthSignIn() {
+				console.log("OAuthSignIn 시작")
+				var oauth2Endpoint = "https://accounts.google.com/o/oauth2/v2/auth";
 
-			// Create <form> element to submit parameters to OAuth 2.0 endpoint.
-			var form = document.createElement("form");
-			form.setAttribute("method", "GET"); // Send as a GET request.
-			form.setAttribute("action", oauth2Endpoint);
+				// Create <form> element to submit parameters to OAuth 2.0 endpoint.
+				var form = document.createElement("form");
+				form.setAttribute("method", "GET"); // Send as a GET request.
+				form.setAttribute("action", oauth2Endpoint);
 
-			// Parameters to pass to OAuth 2.0 endpoint.
-			var params = {
-				client_id:
-					"705447352778-vqgdd2p1v0sg4mjsip334e9tc60lt2bd.apps.googleusercontent.com",
-				redirect_uri: "https://sion99.github.io/redirect.html",
-				response_type: "code",
-				scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/spreadsheets",
-				access_type: "offline",
-				prompt: "consent",
-			};
+				// Parameters to pass to OAuth 2.0 endpoint.
+				var params = {
+					client_id:
+						"705447352778-vqgdd2p1v0sg4mjsip334e9tc60lt2bd.apps.googleusercontent.com",
+					redirect_uri: "http://localhost:8080/oauth2/authorization/google",
+					response_type: "code",
+					scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/spreadsheets",
+					access_type: "offline",
+					prompt: "consent",
+				};
 
-			// Add form parameters as hidden input values.
-			for (var p in params) {
-				var input = document.createElement("input");
-				input.setAttribute("type", "hidden");
-				input.setAttribute("name", p);
-				input.setAttribute("value", params[p]);
-				form.appendChild(input);
+				// Add form parameters as hidden input values.
+				for (var p in params) {
+					var input = document.createElement("input");
+					input.setAttribute("type", "hidden");
+					input.setAttribute("name", p);
+					input.setAttribute("value", params[p]);
+					form.appendChild(input);
+				}
+
+				// Add form to page and submit it to open the OAuth 2.0 endpoint.
+				document.body.appendChild(form);
+				form.submit();
 			}
-
-			// Add form to page and submit it to open the OAuth 2.0 endpoint.
-			document.body.appendChild(form);
-			form.submit();
-		}
 		checkLocalStorage();
 		function checkLocalStorage() {
 			console.log("checkLocalStorage 시작")
@@ -57,12 +63,12 @@
 			if (!loginToken) {
 				oauthSignIn();
 			} else {
-				window.location.href = "https://sion99.github.io/upload.html";
+				window.location.href = "http://localhost:3000/upload.html";
 			}
 
 			if (authCode !== null) {
 				// do server request
-				fetch("https://sions.me/auth", {
+				fetch("http://sions.me:8000/auth", {
 					method: "POST",
 					body: JSON.stringify({ code: authCode }),
 					headers: new Headers({
