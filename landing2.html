@@ -1,51 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <div class="container mx-auto">
-        <!-- Your existing content goes here -->
-        <div class="flex flex-col min-h-screen bg-white text-black">
-            <header class="px-4 lg:px-6 h-16 flex items-center">
-                <a class="flex items-center justify-center" href="#" rel="ugc"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z"></path><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 17V7"></path></svg><span class="ml-2 font-semibold text-xl">SaveMyReceipt</span></a>
-                <!-- Header content -->
-            </header>
-            <main class="flex-1">
-                <!-- Main content -->
-                <section class="w-full py-16 sm:py-24 md:py-32 lg:py-48 bg-cover bg-center"><div class="container px-4 md:px-6 text-center"><h1 class="text-4xl sm:text-5xl font-bold">
-                    영수증을 한 번에<br>관리하세요.
-                  </h1><p class="max-w-lg mx-auto mt-4 text-lg text-gray-600">
-                    회계 처리를 사진 한 장으로 간편하게.
-                  </p>
-                    <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=705447352778-vqgdd2p1v0sg4mjsip334e9tc60lt2bd.apps.googleusercontent.com&redirect_uri=http://localhost:8080/login/oauth2/code/google&response_type=code&scope=email%20profile%20https://www.googleapis.com/auth/spreadsheets&access_type=offline" class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-6 px-8 py-3 text-white bg-blue-600 hover:bg-blue-500 rounded-md">
-                        Google로 시작하기
-                    </a>                    
-                  </div></section><section class="w-full py-12 md:py-24 lg:py-32"><div class="container px-4 md:px-6"><h2 class="text-3xl font-bold text-center mb-10">사용 방법</h2>
-                    <div class="flex flex-wrap -mx-4"><div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8"><div class="h-64 bg-white-200 rounded-md mb-6"><center><img src="images/camera.png" width="250"></center></div><h3 class="text-2xl font-bold mb-3">사진 촬영</h3><p class="text-lg text-gray-600">
-                        구매시 발급되는 영수증 사진을 촬영해주세요.
-                      </p></div><div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8"><div class="h-64 bg-white-200 rounded-md mb-6"><center><img src="images/upload.png" width="250"></center></div><h3 class="text-2xl font-bold mb-3">업로드</h3><p class="text-lg text-gray-600">
-                        촬영한 사진을 업로드해주세요. 영수증 인식 후 표시되는 정보가 맞는지 확인한 후 저장해주세요.
-                      </p></div><div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8"><div class="h-64 bg-white-200 rounded-md mb-6"><center><img src="images/spreadsheet.png" width="250"></center></div><h3 class="text-2xl font-bold mb-3">Google 스프레드시트에서 확인</h3><p class="text-lg text-gray-600">
-                        등록된 회계라면 Google 스프레드시트에서 내역을 편하게 확인하고 관리할 수 있어요.
-                      </p></div></div></div></section>
-            </main>
-            <footer class="h-16 sm:h-20 flex items-center px-2 sm:px-4 lg:px-6 bg-gray-800 text-white">
-                <!-- Footer content -->
-                <div class="flex gap-4">
-                    <a class="text-lg" href="https://github.com/Sion99" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-6 sm:h-6">
-                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48 0-.24-.01-1.04-.01-1.9-2.78.61-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.59 9.59 0 0112 6.8c.85 0 1.7.11 2.5.33 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.91.68 1.84 0 1.33-.01 2.4-.01 2.73 0 .27.18.58.69.48A10 10 0 0022 12c0-5.52-4.48-10-10-10z"></path>
-            </svg>
-            </a>
-                </div><p class="ml-auto text-sm">©  Sion99. All rights reserved.</p>
-            </footer>
-        </div>
-    </div>
-    <script>
 
-    </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="container mx-auto">
+    <!-- Your existing content goes here -->
+    <div class="flex flex-col min-h-screen bg-white text-black">
+      <header class="px-4 lg:px-6 h-16 flex items-center">
+        <a class="flex items-center justify-center" href="#" rel="ugc"><svg xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+            <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z"></path>
+            <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+            <path d="M12 17V7"></path>
+          </svg><span class="ml-2 font-semibold text-xl">SaveMyReceipt</span></a>
+        <!-- Header content -->
+      </header>
+      <main class="flex-1">
+        <!-- Main content -->
+        <section class="w-full py-16 sm:py-24 md:py-32 lg:py-48 bg-cover bg-center">
+          <div class="container px-4 md:px-6 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold">
+              영수증을 한 번에<br>관리하세요.
+            </h1>
+            <p class="max-w-lg mx-auto mt-4 text-lg text-gray-600">
+              회계 처리를 사진 한 장으로 간편하게.
+            </p>
+            <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=705447352778-vqgdd2p1v0sg4mjsip334e9tc60lt2bd.apps.googleusercontent.com&redirect_uri=http://localhost:8080/login/oauth2/code/google&response_type=code&scope=email%20profile%20https://www.googleapis.com/auth/spreadsheets&access_type=offline"
+              class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-6 px-8 py-3 text-white bg-blue-600 hover:bg-blue-500 rounded-md">
+              Google로 시작하기
+            </a>
+          </div>
+        </section>
+        <section class="w-full py-12 md:py-24 lg:py-32">
+          <div class="container px-4 md:px-6">
+            <h2 class="text-3xl font-bold text-center mb-10">사용 방법</h2>
+            <div class="flex flex-wrap -mx-4">
+              <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+                <div class="h-64 bg-white-200 rounded-md mb-6">
+                  <center><img src="images/camera.png" width="250"></center>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">사진 촬영</h3>
+                <p class="text-lg text-gray-600">
+                  구매시 발급되는 영수증 사진을 촬영해주세요.
+                </p>
+              </div>
+              <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+                <div class="h-64 bg-white-200 rounded-md mb-6">
+                  <center><img src="images/upload.png" width="250"></center>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">업로드</h3>
+                <p class="text-lg text-gray-600">
+                  촬영한 사진을 업로드해주세요. 영수증 인식 후 표시되는 정보가 맞는지 확인한 후 저장해주세요.
+                </p>
+              </div>
+              <div class="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+                <div class="h-64 bg-white-200 rounded-md mb-6">
+                  <center><img src="images/spreadsheet.png" width="250"></center>
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Google 스프레드시트에서 확인</h3>
+                <p class="text-lg text-gray-600">
+                  등록된 회계라면 Google 스프레드시트에서 내역을 편하게 확인하고 관리할 수 있어요.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="h-16 sm:h-20 flex items-center px-2 sm:px-4 lg:px-6 bg-gray-800 text-white">
+        <!-- Footer content -->
+        <div class="flex gap-4">
+          <a class="text-lg" href="https://github.com/Sion99" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="w-4 h-4 sm:w-6 sm:h-6">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48 0-.24-.01-1.04-.01-1.9-2.78.61-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.59 9.59 0 0112 6.8c.85 0 1.7.11 2.5.33 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.91.68 1.84 0 1.33-.01 2.4-.01 2.73 0 .27.18.58.69.48A10 10 0 0022 12c0-5.52-4.48-10-10-10z">
+              </path>
+            </svg>
+          </a>
+        </div>
+        <p class="ml-auto text-sm">© Sion99. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+  <script>
+
+  </script>
 </body>
+
 </html>
